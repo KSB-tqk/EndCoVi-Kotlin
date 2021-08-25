@@ -16,6 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/slider_background"
+            android:visibility="invisible"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,36 +28,65 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <ImageView
-            android:id="@+id/dot_background"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/welcome_label_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/welcome_label_linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_rounded_corner_cardview"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="60dp"
+                android:paddingTop="70dp"
+                android:paddingEnd="80dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/welcome_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/app_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EndCoVi"
+                    android:textColor="@color/white"
+                    android:textSize="33sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/welcome_label"
+                    app:layout_constraintRight_toRightOf="@id/welcome_label"
+                    app:layout_constraintTop_toBottomOf="@id/welcome_label" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/dot_background"
+            android:backgroundTint="@color/transparent"
+            app:cardElevation="0dp"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/welcome_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome to"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="@id/dot_background"
-            app:layout_constraintLeft_toLeftOf="@id/slider_background"
-            app:layout_constraintRight_toLeftOf="@id/dot_background" />
+            <ImageView
+                android:id="@+id/dot_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dot_background" />
+        </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/app_name_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EndCoVi"
-            android:textSize="33sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@id/welcome_label"
-            app:layout_constraintRight_toRightOf="@id/welcome_label"
-            app:layout_constraintTop_toBottomOf="@id/welcome_label" />
 
         <LinearLayout
             android:id="@+id/sign_in_linear_label"
@@ -67,7 +97,7 @@
             android:layout_marginEnd="50dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/app_name_label"
+            app:layout_constraintTop_toBottomOf="@id/welcome_label_cardview"
             android:orientation="horizontal"
             android:backgroundTint="#EDFFF0"
             android:background="@drawable/rounded_corner_background">
@@ -100,7 +130,7 @@
                 android:layout_weight="2"
                 android:textColor="#4BD9A5"
                 android:fontFamily="cursive"
-                android:text="Sign Up"
+                android:text="Sign In"
                 android:textSize="30sp" />
         </LinearLayout>
 
@@ -184,7 +214,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/rounded_button_background"
-            android:text="Sign Up"
+            android:text="Sign In"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -197,7 +227,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="@id/sign_up_button"
             app:layout_constraintRight_toRightOf="@id/sign_up_button"
             app:layout_constraintTop_toBottomOf="@id/sign_up_button">
@@ -206,9 +236,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="Already have an account? " />
+                android:text="Doesn't have an account yet? " />
 
             <TextView
+                android:id="@+id/navToSignUpButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sign Up"
