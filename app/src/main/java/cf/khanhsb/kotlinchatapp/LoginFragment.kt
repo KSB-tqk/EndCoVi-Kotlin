@@ -6,14 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import cf.khanhsb.kotlinchatapp.databinding.FragmentSignUpBinding
+import cf.khanhsb.kotlinchatapp.databinding.FragmentLoginBinding
 
 
-class SignUpFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private var _binding: FragmentSignUpBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -24,12 +23,10 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
-
-        val view =
-        binding.navToSignInButton.setOnClickListener {
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding.navToSignUpButton.setOnClickListener {
             Navigation.findNavController(binding.root)
-                .navigate(R.id.action_signUpFragment_to_loginFragment)
+                .navigate(R.id.action_loginFragment_to_signUpFragment2)
         }
 
         return binding.root
