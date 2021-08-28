@@ -182,30 +182,6 @@
             app:layout_constraintRight_toRightOf="@id/email_edit_text"
             app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
 
-        <EditText
-            android:id="@+id/confirm_password_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/stroke_rounded_background_corner"
-            android:drawableStart="@drawable/ic_password"
-            android:drawableEnd="@drawable/ic_password_peek"
-            android:drawablePadding="20dp"
-            android:hint="Confirm Your Password"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:paddingStart="15dp"
-            android:paddingTop="15dp"
-            android:paddingEnd="15dp"
-            android:paddingBottom="15dp"
-            android:textSize="15sp"
-            app:layout_constraintLeft_toLeftOf="@id/password_edit_text"
-            app:layout_constraintRight_toRightOf="@id/password_edit_text"
-            app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/sign_up_button"
             android:layout_width="match_parent"
@@ -218,9 +194,9 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="22sp"
-            app:layout_constraintLeft_toLeftOf="@id/confirm_password_edit_text"
-            app:layout_constraintRight_toRightOf="@id/confirm_password_edit_text"
-            app:layout_constraintTop_toBottomOf="@id/confirm_password_edit_text" />
+            app:layout_constraintLeft_toLeftOf="@id/password_edit_text"
+            app:layout_constraintRight_toRightOf="@id/password_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
